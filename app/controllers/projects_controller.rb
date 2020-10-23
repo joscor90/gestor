@@ -9,7 +9,11 @@ class ProjectsController < ApplicationController
   end
 
   def create 
-    @project = Project.create(project_params)
+    @project = Project.new(project_params)
+    @project.save
+  end
+
+  def project 
   end
 
   private

@@ -4,4 +4,7 @@ class ProjectsController < ApplicationController
 
   def dashboard
   end
+
+  def create 
+  end
 end

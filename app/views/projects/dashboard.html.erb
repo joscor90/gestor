@@ -1,2 +1,54 @@
-<h1>Projects#dashboard</h1>
-<p>Find me in app/views/projects/dashboard.html.erb</p>
+<form>
+    <select name = "state"> 
+        <option value=0>propuesta</option>
+        <option value=1>en progreso</option>
+        <option value =2>terminado</option>
+    </select>
+    <button type="submit"> buscar</button>
+</form>
+
+<table>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Start On
+        </th>
+        <th>
+            End On
+        </th>
+        <th>
+            State
+        </th>
+    </tr>
+    <% @projects.each do |p| %>
+    <tr>
+        <td>
+            <%= p.name %>
+        </td>
+        <td>
+            <%= p.description %>
+        </td>
+        <td>
+            <%= p.start_on %>
+        </td>
+        <td>
+            <%= p.end_on %>
+        </td>
+        <td>
+            <%= p.state %>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<!-- <% @projects.each do |p| %>
+    <%= p.name %>
+    <%= p.description %>
+    <%= p.start_on %>
+    <%= p.end_on %>
+    <%= p.state %>
+<% end %> -->

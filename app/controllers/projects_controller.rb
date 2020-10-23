@@ -6,7 +6,11 @@ class ProjectsController < ApplicationController
   end
 
   def dashboard
-    @projects = Project.all
+    if params[:state].present?
+      @projects = Project.where('state = ?', params[:state])
+    else
+       @projects = Project.all
+    end
   end
 
   def create 
@@ -19,6 +23,6 @@ class ProjectsController < ApplicationController
 
   private
   def project_params
-    params.require(:project).permit(:name, :description, :start_on, :end_on, :states)
+    params.require(:project).permit(:name, :description, :start_on, :end_on, :state)
   end
 end
